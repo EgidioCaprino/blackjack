@@ -1,7 +1,7 @@
 import fetch from 'node-fetch';
 
 import fetchDeck from '../fetchDeck';
-import deck from './deck';
+import deck from './deck.json';
 
 jest.mock('node-fetch');
 
