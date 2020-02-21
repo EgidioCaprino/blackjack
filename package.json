@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint src",
     "test": "jest",
-    "build": "babel src --out-dir lib"
+    "build": "babel src --out-dir lib --ignore 'src/__tests__/**/*'"
   },
   "repository": {
     "type": "git",
