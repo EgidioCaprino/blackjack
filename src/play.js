@@ -11,7 +11,7 @@ const play = (player, bob, deck) => {
     return play(result.player, bob, result.deck);
   }
   const result = drawCard(bob, deck);
-  return play(play, result.player, result.deck);
+  return play(player, result.player, result.deck);
 };
 
 export default play;
