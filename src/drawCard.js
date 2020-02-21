@@ -1,6 +1,6 @@
 import getCardValue from './getCardValue';
 
-export default (player, deck) => {
+const drawCard = (player, deck, count = 1) => {
   if (!deck.length) {
     throw new Error('Unable to draw a card because the deck is empty');
   }
@@ -15,8 +15,11 @@ export default (player, deck) => {
     ],
   };
 
-  return {
-    player: newPlayer,
-    deck: newDeck,
-  };
+  return (
+    count > 1
+      ? drawCard(newPlayer, newDeck, count - 1)
+      : { player: newPlayer, deck: newDeck }
+  );
 };
+
+export default drawCard;
