@@ -10,8 +10,8 @@ export default () => {
   const port = 8080;
 
   app.get('/blackjack/play', async (request, response) => {
-    const playerName = sanitizePlayerName(request.query.playerName);
     try {
+      const playerName = sanitizePlayerName(request.query.playerName);
       const { player, bob, deck } = await setupGame(playerName);
       const outcome = play(player, bob, deck);
       response.status(200).send(outcome);
