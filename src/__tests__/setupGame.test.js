@@ -45,3 +45,7 @@ it('should fetch the deck and draw the first cards', async () => {
   const actual = await setupGame(playerName);
   expect(actual).toEqual(expected);
 });
+
+afterAll(() => {
+  jest.unmock('../fetchDeck');
+});

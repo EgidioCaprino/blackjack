@@ -63,3 +63,9 @@ it('should provide the error message when it fails', async () => {
   expect(response.send).toHaveBeenCalledTimes(1);
   expect(response.send).toHaveBeenCalledWith({ message: 'bar' });
 });
+
+afterAll(() => {
+  jest.unmock('express');
+  jest.unmock('../setupGame');
+  jest.unmock('../play');
+});

@@ -28,3 +28,7 @@ it('should throw an error when receiving an invalid deck', async () => {
   fetch.mockResolvedValue([]);
   await expect(fetchDeck()).rejects.toThrow();
 });
+
+afterAll(() => {
+  jest.unmock('node-fetch');
+});
