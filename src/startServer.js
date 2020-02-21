@@ -1,5 +1,6 @@
 import express from 'express';
 
+import sanitizePlayerName from './sanitizePlayerName';
 import setupGame from './setupGame';
 import play from './play';
 import log from './log';
@@ -9,7 +10,7 @@ export default () => {
   const port = 8080;
 
   app.get('/blackjack/play', async (request, response) => {
-    const { playerName = 'You' } = request.query;
+    const playerName = sanitizePlayerName(request.query.playerName);
     try {
       const { player, bob, deck } = await setupGame(playerName);
       const outcome = play(player, bob, deck);
