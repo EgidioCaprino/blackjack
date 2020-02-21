@@ -6,7 +6,8 @@
   "scripts": {
     "lint": "eslint src",
     "test": "jest",
-    "build": "babel src --out-dir lib --ignore 'src/__tests__/**/*'"
+    "build": "babel src --out-dir lib --ignore 'src/__tests__/**/*'",
+    "start": "node lib/index.js"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.4",
+    "express": "^4.17.1",
     "node-fetch": "^2.6.0",
     "regenerator-runtime": "^0.13.3"
   }
