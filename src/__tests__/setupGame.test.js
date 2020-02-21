@@ -5,6 +5,7 @@ import deck from './deck.json';
 jest.mock('../fetchDeck');
 
 beforeEach(() => {
+  jest.clearAllMocks();
   fetchDeck.mockResolvedValue(deck);
 });
 
