@@ -11,6 +11,5 @@ export default ({ value }) => {
       return numericValue;
     }
   }
-  console.warn('Invalid card', value);
-  return 0;
+  throw new Error(`Invalid card value: ${value}`);
 };

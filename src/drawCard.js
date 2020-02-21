@@ -2,8 +2,7 @@ import getCardValue from './getCardValue';
 
 export default (player, deck) => {
   if (!deck.length) {
-    console.warn('Unable to draw a card because the deck is empty');
-    return { player, deck };
+    throw new Error('Unable to draw a card because the deck is empty');
   }
 
   const [card, ...newDeck] = deck;

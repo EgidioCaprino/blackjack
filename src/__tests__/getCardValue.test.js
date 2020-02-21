@@ -20,8 +20,7 @@ it('should use the numeric value for the numbered cards', () => {
   expect(actual).toEqual(expected);
 });
 
-it('should value 0 unknown cards', () => {
-  const expected = 0;
-  const actual = getCardValue({ value: '15' });
-  expect(actual).toStrictEqual(expected);
+it('should fail when dealing with invalid cards', () => {
+  const card = { value: '15' };
+  expect(() => getCardValue(card)).toThrow();
 });
