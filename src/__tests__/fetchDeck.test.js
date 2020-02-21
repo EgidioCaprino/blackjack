@@ -22,3 +22,8 @@ it('should provide an array of 52 cards', async () => {
   expect(Array.isArray(actual)).toBe(true);
   expect(actual).toHaveLength(52);
 });
+
+it('should throw an error when receiving an invalid deck', async () => {
+  fetch.mockResolvedValue([]);
+  await expect(fetchDeck()).rejects.toThrow();
+});
