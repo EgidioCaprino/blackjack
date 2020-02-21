@@ -2,6 +2,7 @@ import express from 'express';
 
 import setupGame from './setupGame';
 import play from './play';
+import log from './log';
 
 export default () => {
   const app = express();
@@ -14,13 +15,13 @@ export default () => {
       const outcome = play(player, bob, deck);
       response.status(200).send(outcome);
     } catch (error) {
-      console.error(error);
+      log(error);
       const { message } = error;
       response.status(500).send({ message });
     }
   });
 
   app.listen(port, () => {
-    console.log('Server started on port %d', port);
+    log('Server started on port %d', port);
   });
 };
